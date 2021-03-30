@@ -21,4 +21,13 @@ function closeModal() {
 }
 
 btnCloseModal.addEventListener('click', () => closeModal());
-overlay.addEventListener('click', () => closeModal())
+overlay.addEventListener('click', () => closeModal());
+
+//listen for escape key
+//and close window
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && !modal.classList.contains('hidden')
+    && !overlay.classList.contains('hidden')) {
+    closeModal();
+  }
+});
